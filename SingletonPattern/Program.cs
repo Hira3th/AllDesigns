@@ -10,3 +10,5 @@ logger1.Log("Singleton pattern in action!");
 
 Console.WriteLine(Object.ReferenceEquals(logger1, logger2) ?
     "Both are the same instance." : "Different instances.");
+
+Console.ReadLine();
