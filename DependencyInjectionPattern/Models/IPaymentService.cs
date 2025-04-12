@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DependencyInjectionPattern.Models
+namespace DependencyInjectionPattern.Models;
+
+public interface IPaymentService
 {
-    internal interface IPaymentService
-    {
-        void ProcessPayment(double amount);
-    }
+    void ProcessPayment(double amount);
 }

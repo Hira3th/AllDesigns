@@ -5,21 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DependencyInjectionPattern.Logic
+namespace DependencyInjectionPattern.Logic;
+
+public class Order
 {
-    internal class Order
+    private IPaymentService _paymentService;
+
+    public Order(IPaymentService paymentService)
     {
-        private IPaymentService _paymentService;
+        _paymentService = paymentService;
+    }
 
-        public Order(IPaymentService paymentService)
-        {
-            _paymentService = paymentService;
-        }
-
-        public void CompleteOrder(double amount)
-        {
-            _paymentService.ProcessPayment(amount);
-            Console.WriteLine("Commande finalisée !");
-        }
+    public void CompleteOrder(double amount)
+    {
+        _paymentService.ProcessPayment(amount);
+        Console.WriteLine("Commande finalisée !");
     }
 }

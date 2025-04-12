@@ -5,13 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DependencyInjectionPattern.Logic
+namespace DependencyInjectionPattern.Logic;
+
+public class PaypalPaymentService : IPaymentService
 {
-    internal class PaypalPaymentService : IPaymentService
+    public void ProcessPayment(double amount)
     {
-        public void ProcessPayment(double amount)
-        {
-            Console.WriteLine($"Paiement de {amount} € effectué via PayPal.");
-        }
+        Console.WriteLine($"Paiement de {amount} € effectué via PayPal.");
     }
 }
