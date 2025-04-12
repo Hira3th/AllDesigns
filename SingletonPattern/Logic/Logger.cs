@@ -4,33 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SingletonPattern.Logic
+namespace SingletonPattern.Logic;
+
+public class Logger
 {
-    internal class Logger
+    private static Logger instance;
+    private static readonly object lockObject = new object();
+
+    private Logger() { }
+
+    public static Logger Instance
     {
-        private static Logger instance;
-        private static readonly object lockObject = new object();
-
-        private Logger() { }
-
-        public static Logger Instance
+        get
         {
-            get
+            lock (lockObject)
             {
-                lock (lockObject)
+                if (instance == null)
                 {
-                    if (instance == null)
-                    {
-                        instance = new Logger();
-                    }
-                    return instance;
+                    instance = new Logger();
                 }
+                return instance;
             }
         }
+    }
 
-        public void Log(string message)
-        {
-            Console.WriteLine($"Log: {message}");
-        }
+    public void Log(string message)
+    {
+        Console.WriteLine($"Log: {message}");
     }
 }
