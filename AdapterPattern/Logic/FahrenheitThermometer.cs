@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdapterPattern.Logic
+namespace AdapterPattern.Logic;
+
+internal class FahrenheitThermometer
 {
-    internal class FahrenheitThermometer
+    public double GetTemperature()
     {
-        public double GetTemperature()
-        {
-            return 98.6; // Température en Fahrenheit
-        }
+        return 98.6; // Température en Fahrenheit
     }
 }
+

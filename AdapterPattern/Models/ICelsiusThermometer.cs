@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdapterPattern.Models
+namespace AdapterPattern.Models;
+
+internal interface ICelsiusThermometer
 {
-    internal interface ICelsiusThermometer
-    {
-        double GetTemperatureInCelsius();
-    }
+    double GetTemperatureInCelsius();
 }

@@ -5,6 +5,6 @@ using AdapterPattern.Models;
 Console.WriteLine("Hello, Adapter!");
 
 FahrenheitThermometer oldThermometer = new FahrenheitThermometer();
-ThermometerAdapter adaptedThermometer = new ThermometerAdapter(oldThermometer);
+ICelsiusThermometer adaptedThermometer = new ThermometerAdapter(oldThermometer);
 
 Console.WriteLine($"Température en Celsius : {adaptedThermometer.GetTemperatureInCelsius()} °C");

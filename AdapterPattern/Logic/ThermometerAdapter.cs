@@ -4,20 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdapterPattern.Logic
+namespace AdapterPattern.Logic;
+
+internal class ThermometerAdapter : ICelsiusThermometer
 {
-    internal class ThermometerAdapter
+    private FahrenheitThermometer _fahrenheitThermometer;
+
+    public ThermometerAdapter(FahrenheitThermometer thermometer)
     {
-        private FahrenheitThermometer _fahrenheitThermometer;
+        _fahrenheitThermometer = thermometer;
+    }
 
-        public ThermometerAdapter(FahrenheitThermometer thermometer)
-        {
-            _fahrenheitThermometer = thermometer;
-        }
-
-        public double GetTemperatureInCelsius()
-        {
-            return (_fahrenheitThermometer.GetTemperature() - 32) * 5 / 9;
-        }
+    public double GetTemperatureInCelsius()
+    {
+        return (_fahrenheitThermometer.GetTemperature() - 32) * 5 / 9;
     }
 }
