@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdapterPattern.Models;
 
-internal interface ICelsiusThermometer
+public interface ICelsiusThermometer
 {
     double GetTemperatureInCelsius();
 }

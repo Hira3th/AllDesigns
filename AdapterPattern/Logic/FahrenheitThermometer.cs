@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdapterPattern.Logic;
 
-internal class FahrenheitThermometer
+public class FahrenheitThermometer
 {
     public double GetTemperature()
     {

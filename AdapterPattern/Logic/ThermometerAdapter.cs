@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdapterPattern.Logic;
 
-internal class ThermometerAdapter : ICelsiusThermometer
+public class ThermometerAdapter : ICelsiusThermometer
 {
     private FahrenheitThermometer _fahrenheitThermometer;
 
