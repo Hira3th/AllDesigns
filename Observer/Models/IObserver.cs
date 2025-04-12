@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Observer.Models
+namespace Observer.Models;
+
+public interface IObserver
 {
-    public interface IObserver
-    {
-        void Update(string message);
-    }
+    void Update(string message);
 }

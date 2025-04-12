@@ -5,28 +5,27 @@ using System.Text;
 using System.Threading.Tasks;
 using Observer.Models;
 
-namespace Observer.Logic
+namespace Observer.Logic;
+
+public class Subject
 {
-    public class Subject
+    private readonly List<IObserver> observers = new List<IObserver>();
+
+    public void Attach(IObserver observer)
     {
-        private readonly List<IObserver> observers = new List<IObserver>();
+        observers.Add(observer);
+    }
 
-        public void Attach(IObserver observer)
-        {
-            observers.Add(observer);
-        }
+    public void Detach(IObserver observer)
+    {
+        observers.Remove(observer);
+    }
 
-        public void Detach(IObserver observer)
+    public void Notify(string message)
+    {
+        foreach (var observer in observers)
         {
-            observers.Remove(observer);
-        }
-
-        public void Notify(string message)
-        {
-            foreach (var observer in observers)
-            {
-                observer.Update(message);
-            }
+            observer.Update(message);
         }
     }
 }
