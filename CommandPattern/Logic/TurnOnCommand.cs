@@ -5,18 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommandPattern.Logic
+namespace CommandPattern.Logic;
+
+public class TurnOnCommand : ICommand
 {
-    internal class TurnOnCommand : ICommand
+    private Light _light;
+
+    public TurnOnCommand(Light light)
     {
-        private Light _light;
-
-        public TurnOnCommand(Light light)
-        {
-            _light = light;
-        }
-
-        public void Execute() => _light.TurnOn();
-        public void Undo() => _light.TurnOff();
+        _light = light;
     }
+
+    public void Execute() => _light.TurnOn();
+    public void Undo() => _light.TurnOff();
 }

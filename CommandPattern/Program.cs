@@ -1,17 +1,19 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System.Windows.Input;
 using CommandPattern.Logic;
 
 Console.WriteLine("Hello, Command!");
 
 Light light = new Light();
-TurnOnCommand turnOn = new TurnOnCommand(light);
-TurnOffCommand turnOff = new TurnOffCommand(light);
+ICommand command = new ICommand();
 
 RemoteControl remote = new RemoteControl();
 
-remote.SetCommand(turnOn);
+command = new TurnOnCommand(light);
+remote.SetCommand(command);
 remote.PressButton();
 
-remote.SetCommand(turnOff);
+command = new TurnOffCommand(light);
+remote.SetCommand(command);
 remote.PressButton();
 remote.PressUndo();

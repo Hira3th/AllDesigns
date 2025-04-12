@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommandPattern.Models
+namespace CommandPattern.Models;
+
+public interface ICommand
 {
-    internal interface ICommand
-    {
-        void Execute();
-        void Undo();
-    }
+    void Execute();
+    void Undo();
 }

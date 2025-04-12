@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CommandPattern.Logic
 {
-    internal class RemoteControl
+    public class RemoteControl
     {
         private ICommand _command;
 

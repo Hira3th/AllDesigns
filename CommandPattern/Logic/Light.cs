@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CommandPattern.Logic
 {
-    internal class Light
+    public class Light
     {
         public void TurnOn() => Console.WriteLine("La lumière est allumée.");
         public void TurnOff() => Console.WriteLine("La lumière est éteinte.");
