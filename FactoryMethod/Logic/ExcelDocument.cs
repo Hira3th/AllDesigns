@@ -1,5 +1,4 @@
-﻿using System;
-using FactoryMethod.Model;
+﻿using FactoryMethod.Model;
 
 namespace FactoryMethod.Logic;
 
