@@ -5,14 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StrategyPattern.Logic
+namespace StrategyPattern.Logic;
+
+public class QuickSort : ISortingStrategy
 {
-    internal class QuickSort : ISortingStrategy
+    public void Sort(List<int> list)
     {
-        public void Sort(List<int> list)
-        {
-            Console.WriteLine("Sorting using Quick Sort...");
-            list.Sort(); // Simplified for demonstration
-        }
+        Console.WriteLine("Sorting using Quick Sort...");
+        list.Sort(); // Simplified for demonstration
     }
 }

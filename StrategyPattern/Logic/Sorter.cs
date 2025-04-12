@@ -5,20 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StrategyPattern.Logic
+namespace StrategyPattern.Logic;
+
+public class Sorter
 {
-    internal class Sorter
+    private ISortingStrategy sortingStrategy;
+
+    public Sorter(ISortingStrategy strategy)
     {
-        private ISortingStrategy sortingStrategy;
+        sortingStrategy = strategy;
+    }
 
-        public Sorter(ISortingStrategy strategy)
-        {
-            sortingStrategy = strategy;
-        }
-
-        public void Sort(List<int> list)
-        {
-            sortingStrategy.Sort(list);
-        }
+    public void Sort(List<int> list)
+    {
+        sortingStrategy.Sort(list);
     }
 }

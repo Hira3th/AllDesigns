@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StrategyPattern.Models
+namespace StrategyPattern.Models;
+
+public interface ISortingStrategy
 {
-    internal interface ISortingStrategy
-    {
-        void Sort(List<int> list);
-    }
+    void Sort(List<int> list);
 }
