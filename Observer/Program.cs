@@ -22,3 +22,5 @@ subject.Detach(observer1);
 
 // Notify remaining observers of another update
 subject.Notify("Another update");
+
+Console.ReadLine();
