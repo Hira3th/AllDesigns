@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DecoratorPattern.Models
+namespace DecoratorPattern.Models;
+
+public class Coffee : IBeverage
 {
-    public class Coffee : IBeverage
-    {
-        public string GetDescription() => "Café";
-        public double GetCost() => 2.0;
-    }
+    public string GetDescription() => "Café";
+    public double GetCost() => 2.0;
 }

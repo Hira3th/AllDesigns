@@ -5,18 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DecoratorPattern.Logic
+namespace DecoratorPattern.Logic;
+
+public class SugarDecorator : IBeverage
 {
-    internal class SugarDecorator : IBeverage
+    private IBeverage _beverage;
+
+    public SugarDecorator(IBeverage beverage)
     {
-        private IBeverage _beverage;
-
-        public SugarDecorator(IBeverage beverage)
-        {
-            _beverage = beverage;
-        }
-
-        public string GetDescription() => _beverage.GetDescription() + ", avec Sucre";
-        public double GetCost() => _beverage.GetCost() + 0.5;
+        _beverage = beverage;
     }
+
+    public string GetDescription() => _beverage.GetDescription() + ", avec Sucre";
+    public double GetCost() => _beverage.GetCost() + 0.5;
 }

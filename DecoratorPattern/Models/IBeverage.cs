@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DecoratorPattern.Models
+namespace DecoratorPattern.Models;
+
+public interface IBeverage
 {
-    internal interface IBeverage
-    {
-        string GetDescription();
-        double GetCost();
-    }
+    string GetDescription();
+    double GetCost();
 }
